@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
-import { Bai_Jamjuree } from "next/font/google";
+import { Ubuntu, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
-const font = Bai_Jamjuree({
-  weight: ["200", "300", "400", "500", "600", "700"],
+const ubuntu = Ubuntu({
+  weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
+  variable: "--font-ubuntu",
+});
+
+const ibm_plex_mono = IBM_Plex_Mono({
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+  variable: "--font-ibm-plex-mono",
 });
 
 export const metadata: Metadata = {
@@ -20,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={font.className}>{children}</body>
+      <body className={`${ubuntu.variable} ${ibm_plex_mono.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }

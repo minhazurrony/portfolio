@@ -12,10 +12,10 @@ function Hero() {
   return (
     <ContainerWrapper className="bg-bg-one">
       <div className="container mx-auto flex flex-col items-center justify-center py-[64px]">
-        <h1 className="text-brand-two font-ubuntu pb-[64px] text-[5rem] capitalize">
+        <h1 className="text-brand-two font-ubuntu md:block hidden pb-[64px] text-[5rem] capitalize">
           developer
         </h1>
-        <div className="flex items-center justify-around gap-32">
+        <div className="xl:flex-nowrap flex flex-wrap items-center justify-around gap-32">
           <div>
             <div className="mb-4 flex flex-col items-center justify-center">
               <Image
@@ -69,7 +69,7 @@ function Hero() {
               </div>
             </div>
           </div>
-          <div className="flex gap-10">
+          <div className="md:flex-nowrap flex flex-wrap items-center justify-center gap-10">
             <div className="flex-2">
               <h1 className="font-ubuntu mb-8 text-[64px] capitalize leading-[1.1] text-white">
                 <span className="text-brand-two font-ibm-plex-mono text-[14px] lowercase">
@@ -96,7 +96,7 @@ function Hero() {
                 </span>
               </p>
             </div>
-            <div className="bg-bg-two flex h-[378px] w-[215px] flex-1 flex-col justify-around rounded-[70px] px-8 py-12">
+            <div className="bg-bg-two flex h-[378px] w-[215px] flex-col justify-around rounded-[70px] px-8 py-12">
               <div className="flex items-center justify-center gap-4">
                 <h3 className="font-ibm-plex-mono text-brand-one text-[48px]">
                   4

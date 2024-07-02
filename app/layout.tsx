@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components";
-import { ubuntu, ibm_plex_mono } from "@/assets/fonts";
+import { ubuntu, ibm_plex_mono } from "../public/assets/fonts";
 
 export const metadata: Metadata = {
   title: "Minhazur Rahman",

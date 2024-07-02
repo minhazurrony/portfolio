@@ -3,6 +3,7 @@ import React from "react";
 import { BsCodeSlash } from "react-icons/bs";
 import { CiLinkedin } from "react-icons/ci";
 import { FaSquareGithub } from "react-icons/fa6";
+import { ContainerWrapper } from "@/components";
 
 function SocialIcons() {
   return (
@@ -36,7 +37,7 @@ function SocialIcons() {
 
 function Navbar() {
   return (
-    <div className="bg-bg-one md:px-[4rem] lg:px-[6rem] xl:px-[8rem] 2xl:px-[10rem] px-[1rem]">
+    <ContainerWrapper className="bg-bg-one">
       <nav className="border-grey md:mx-auto container flex items-center justify-between border-b py-8">
         <div className="flex items-center">
           <BsCodeSlash className="text-brand-one md:text-3xl text-2xl" />
@@ -46,7 +47,7 @@ function Navbar() {
         </div>
         <SocialIcons />
       </nav>
-    </div>
+    </ContainerWrapper>
   );
 }
 

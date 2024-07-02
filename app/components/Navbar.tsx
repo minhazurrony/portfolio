@@ -36,7 +36,7 @@ function SocialIcons() {
 
 function Navbar() {
   return (
-    <div className="bg-bg-one">
+    <div className="bg-bg-one md:px-[4rem] lg:px-[6rem] xl:px-[8rem] 2xl:px-[10rem] px-[1rem]">
       <nav className="border-grey md:mx-auto container flex items-center justify-between border-b py-8">
         <div className="flex items-center">
           <BsCodeSlash className="text-brand-one md:text-3xl text-2xl" />

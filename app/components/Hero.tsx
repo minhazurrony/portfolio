@@ -10,7 +10,7 @@ import { IoIosLink } from "react-icons/io";
 
 function Hero() {
   return (
-    <ContainerWrapper className="bg-bg-one">
+    <ContainerWrapper className="bg-bg-one md:pb-[128px] pb-[64px]">
       <div className="container mx-auto flex flex-col items-center justify-center py-[64px]">
         <h1 className="text-brand-two font-ubuntu md:block hidden pb-[64px] text-[5rem] capitalize">
           developer

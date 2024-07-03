@@ -15,8 +15,8 @@ function Hero() {
         <h1 className="text-brand-two font-ubuntu md:block hidden pb-[64px] text-[5rem] capitalize">
           developer
         </h1>
-        <div className="xl:flex-nowrap flex flex-wrap items-center justify-around gap-32">
-          <div>
+        <div className="xl:flex-nowrap lg:gap-32 md:gap-24 flex flex-wrap items-center justify-around gap-8">
+          <div className="ring-offset-brand-one rounded-br-[160px] rounded-tl-[160px] border-2 border-white px-8 py-24 ring-2 ring-offset-2">
             <div className="mb-4 flex flex-col items-center justify-center">
               <Image
                 src={"/assets/images/minhazur.png"}
@@ -96,7 +96,7 @@ function Hero() {
                 </span>
               </p>
             </div>
-            <div className="bg-bg-two flex h-[378px] w-[215px] flex-col justify-around rounded-[70px] px-8 py-12">
+            <div className="bg-bg-two md:w-[215px] flex h-[378px] w-4/5 flex-col items-start justify-around rounded-[70px] px-8 py-12">
               <div className="flex items-center justify-center gap-4">
                 <h3 className="font-ibm-plex-mono text-brand-one text-[48px]">
                   4

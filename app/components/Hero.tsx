@@ -7,6 +7,7 @@ import {
   IoBriefcaseOutline,
 } from "react-icons/io5";
 import { IoIosLink } from "react-icons/io";
+import { GoDownload } from "react-icons/go";
 
 function Hero() {
   return (
@@ -54,19 +55,27 @@ function Hero() {
                 </p>
               </div>
               <div className="flex space-x-2">
-                <p className="text-bg-one bg-brand-one rounded-md px-2 text-[14px] leading-[2]">
+                <p className="text-bg-one bg-brand-one font-ibm-plex-mono rounded-md px-2 text-[14px] leading-[2]">
                   React
                 </p>
-                <p className="text-bg-one bg-brand-one rounded-md px-2 text-[14px] leading-[2]">
-                  Next.js
+                <p className="text-bg-one bg-brand-one font-ibm-plex-mono rounded-md px-2 text-[14px] leading-[2]">
+                  Next
                 </p>
-                <p className="text-bg-one bg-brand-one rounded-md px-2 text-[14px] leading-[2]">
-                  JavaScript
+                <p className="text-bg-one bg-brand-one font-ibm-plex-mono rounded-md px-2 text-[14px] leading-[2]">
+                  JS
                 </p>
-                <p className="text-bg-one bg-brand-one rounded-md px-2 text-[14px] leading-[2]">
-                  TypeScript
+                <p className="text-bg-one bg-brand-one font-ibm-plex-mono rounded-md px-2 text-[14px] leading-[2]">
+                  TS
                 </p>
               </div>
+            </div>
+            <div className="mt-8 flex justify-center">
+              <button className="font-ubuntu text-bg-one hover:text-bg-two hover:border-brand-one text-md flex items-center rounded-full border-2 bg-white px-4 py-1 duration-300 ease-in">
+                Download CV{" "}
+                <span className="pl-2">
+                  <GoDownload className="text-xl" />
+                </span>
+              </button>
             </div>
           </div>
           <div className="md:flex-nowrap flex flex-wrap items-center justify-center gap-10">

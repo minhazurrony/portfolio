@@ -4,12 +4,12 @@ import Image from "next/image";
 
 function About() {
   return (
-    <ContainerWrapper className="bg-bg-two bg-[url('/assets/images/about.svg')] bg-cover bg-center bg-no-repeat p-[128px]">
-      <div className="mb-[128px]">
+    <ContainerWrapper className="bg-bg-two bg-[url('/assets/images/about_bg.svg')] bg-cover bg-center bg-no-repeat p-[128px]">
+      <div className="lg:block mb-[128px] hidden">
         <ScrollBottom />
       </div>
-      <div className="flex justify-between gap-32">
-        <div className="flex-1">
+      <div className="xl:flex-row xl:gap-32 flex flex-col justify-between gap-16">
+        <div className="xl:w-3/5 w-full">
           <h2 className="font-ubuntu border-brand-one mb-16 inline-block rounded-br-[40px] rounded-tl-[40px] border-2 px-10 py-4 text-6xl capitalize text-white">
             about me
           </h2>
@@ -44,11 +44,12 @@ function About() {
         </div>
 
         <Image
-          className="flex-1"
-          src={"/assets/images/minhazur.png"}
-          width={200}
-          height={200}
-          alt=""
+          className="md:max-h-[628px] w-2/5 flex-auto rounded-2xl object-cover"
+          src={"/assets/images/about.jpg"}
+          alt="about-image"
+          width={150}
+          height={150}
+          style={{ width: "auto", height: "auto" }}
         />
       </div>
     </ContainerWrapper>

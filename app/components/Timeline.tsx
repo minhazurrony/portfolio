@@ -50,11 +50,14 @@ const TimelineDetails = ({ data, index }: TimelineDetailsProps) => {
 function Timeline({ data }: TimelineProps) {
   return (
     <>
-      {data.map((_, idx) => {
+      {data.map((item, idx) => {
         const isEvenIndex = (idx + 1) % 2 === 0;
 
         return (
-          <div className="flex justify-between gap-8">
+          <div
+            className="flex justify-between gap-8"
+            key={`${item.designation}-${idx}`}
+          >
             {!isEvenIndex ? (
               <TimelineDetails data={data} index={idx} />
             ) : (

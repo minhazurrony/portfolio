@@ -1,61 +1,74 @@
-import React, { ComponentType } from "react";
-import { FaHtml5, FaCss3, FaSquareGit } from "react-icons/fa6";
+import { ComponentType } from "react";
 import { IoLogoJavascript } from "react-icons/io5";
-import {
-  SiTypescript,
-  SiRedux,
-  SiTailwindcss,
-  SiAntdesign,
-} from "react-icons/si";
+import { SiRedux } from "react-icons/si";
 import { GrReactjs } from "react-icons/gr";
-import { TbBrandNextjs } from "react-icons/tb";
+import { FaGitAlt } from "react-icons/fa";
+import {
+  AntdIcon,
+  CssIcon,
+  HtmlIcon,
+  NextIcon,
+  TailwindIcon,
+  TsIcon,
+} from "../../public/assets/icons";
 
 export type Skills = {
   name: string;
   icon: ComponentType<{
-    className: string;
+    className?: string;
   }>;
+  iconColor?: string;
 }[];
 
 export const SKILLS: Skills = [
   {
     name: "React.js",
     icon: GrReactjs,
+    iconColor: "#5ED2F3",
   },
   {
     name: "Next.js",
-    icon: TbBrandNextjs,
+    icon: NextIcon,
+    iconColor: "#000000",
   },
   {
     name: "JavaScript",
     icon: IoLogoJavascript,
+    iconColor: "#EFD81A",
   },
   {
     name: "TypeScript",
-    icon: SiTypescript,
+    icon: TsIcon,
+    iconColor: "#2F73BF",
   },
   {
     name: "Redux",
     icon: SiRedux,
+    iconColor: "#7248B6",
   },
   {
-    name: "Tailwind CSS",
-    icon: SiTailwindcss,
+    name: "Tailwind",
+    icon: TailwindIcon,
+    iconColor: "#37BCF8",
   },
   {
-    name: "Ant Design",
-    icon: SiAntdesign,
+    name: "AntD",
+    icon: AntdIcon,
+    iconColor: "#26C2FF",
   },
   {
     name: "HTML",
-    icon: FaHtml5,
+    icon: HtmlIcon,
+    iconColor: "#DC4A25",
   },
   {
     name: "CSS",
-    icon: FaCss3,
+    icon: CssIcon,
+    iconColor: "#244BDD",
   },
   {
     name: "Git",
-    icon: FaSquareGit,
+    icon: FaGitAlt,
+    iconColor: "#E84F31",
   },
 ];

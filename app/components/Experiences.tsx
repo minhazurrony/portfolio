@@ -1,5 +1,6 @@
 import React from "react";
 import { ContainerWrapper, ScrollBottom, Timeline, Title } from "@/components";
+import { EXPERIENCES } from "@/constants/experience";
 
 function Experiences() {
   return (
@@ -14,28 +15,7 @@ function Experiences() {
         />
       </div>
 
-      <Timeline
-        data={[
-          {
-            companyName: "ShopUp Limited",
-            designation: "Software Development Engineer",
-            serviceYearRange: "2022 - 2024",
-            achievements: ["done x", "done y", "utilizing z"],
-          },
-          {
-            companyName: "Japan Marketing & Consultancy Ltd.",
-            designation: "Frontend Engineer",
-            serviceYearRange: "2021 - 2022",
-            achievements: ["done x", "done y", "utilizing z"],
-          },
-          {
-            companyName: "Shorol Limited",
-            designation: "Frontend Engineer",
-            serviceYearRange: "2019 - 2021",
-            achievements: ["done x", "done y", "utilizing z"],
-          },
-        ]}
-      />
+      <Timeline data={EXPERIENCES} />
     </ContainerWrapper>
   );
 }

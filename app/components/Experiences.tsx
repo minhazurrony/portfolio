@@ -23,9 +23,15 @@ function Experiences() {
             achievements: ["done x", "done y", "utilizing z"],
           },
           {
-            companyName: "JMC",
+            companyName: "Japan Marketing & Consultancy Ltd.",
             designation: "Frontend Engineer",
             serviceYearRange: "2021 - 2022",
+            achievements: ["done x", "done y", "utilizing z"],
+          },
+          {
+            companyName: "Shorol Limited",
+            designation: "Frontend Engineer",
+            serviceYearRange: "2019 - 2021",
             achievements: ["done x", "done y", "utilizing z"],
           },
         ]}

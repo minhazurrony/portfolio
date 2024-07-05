@@ -1,4 +1,4 @@
-import React, { ComponentType } from "react";
+import React from "react";
 import { ContainerWrapper, ScrollBottom, Skill, Title } from "@/components";
 import { SKILLS } from "@/constants/skills";
 
@@ -12,12 +12,13 @@ function Skills() {
         <Title />
       </div>
 
-      <div className="grid grid-cols-2 gap-16 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      <div className="grid grid-cols-3 gap-16 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7">
         {SKILLS.map((skill) => (
           <Skill
             key={skill.name}
             label={skill.name}
-            icon={skill.icon as ComponentType}
+            icon={skill.icon}
+            iconColor={skill.iconColor}
           />
         ))}
       </div>

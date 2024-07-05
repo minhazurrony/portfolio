@@ -9,7 +9,10 @@ function Skills() {
         <ScrollBottom />
       </div>
       <div className="mb-32">
-        <Title />
+        <Title
+          title="Skills"
+          subtitle="I am striving to never stop learning and improving"
+        />
       </div>
 
       <div className="grid grid-cols-3 gap-16 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7">

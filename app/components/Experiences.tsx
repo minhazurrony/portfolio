@@ -11,7 +11,7 @@ function Experiences() {
       <div className="mb-32">
         <Title
           title="Experience"
-          subtitle="Here is a quick summary of my most recent experiences"
+          subtitle="Exploring passion through professional journey"
         />
       </div>
 

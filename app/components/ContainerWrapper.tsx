@@ -8,7 +8,7 @@ type ContainerWrapperProps = {
 function ContainerWrapper({ children, className }: ContainerWrapperProps) {
   return (
     <div
-      className={`${className} md:px-[4rem] lg:px-[6rem] xl:px-[8rem] 2xl:px-[10rem] px-[1rem]`}
+      className={`${className} px-[2rem] md:px-[4rem] lg:px-[6rem] xl:px-[8rem] 2xl:px-[10rem]`}
     >
       {children}
     </div>

@@ -47,7 +47,7 @@ function Contact() {
       </div>
 
       <div className="flex flex-col items-center justify-center gap-32">
-        <h2 className="inline-block rounded-br-[40px] rounded-tl-[40px] border-2 border-brand-one px-10 py-4 font-ubuntu text-2xl capitalize text-brand-one">
+        <h2 className="inline-block rounded-br-[40px] rounded-tl-[40px] border-2 border-brand-one px-10 py-4 font-ubuntu text-xl capitalize text-brand-one lg:text-2xl">
           send me a message
         </h2>
         <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-8">

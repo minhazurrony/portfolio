@@ -80,7 +80,7 @@ function Hero() {
           </div>
           <div className="flex flex-wrap items-center justify-center gap-10 md:flex-nowrap">
             <div className="flex-2">
-              <h1 className="mb-8 font-ubuntu text-[64px] capitalize leading-none text-white">
+              <h1 className="mb-8 font-ubuntu text-4xl capitalize leading-none text-white md:text-5xl lg:text-6xl">
                 <span className="font-ibm-plex-mono text-[14px] lowercase text-brand-two">
                   {"<h1>"}
                 </span>

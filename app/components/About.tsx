@@ -10,7 +10,7 @@ function About() {
       </div>
       <div className="flex flex-col justify-between gap-16 xl:flex-row xl:gap-32">
         <div className="w-full xl:w-3/5">
-          <h2 className="mb-16 inline-block rounded-br-[40px] rounded-tl-[40px] border-2 border-brand-one px-10 py-4 font-ubuntu text-6xl capitalize text-white">
+          <h2 className="mb-16 inline-block rounded-br-[40px] rounded-tl-[40px] border-2 border-brand-one px-10 py-4 font-ubuntu text-4xl capitalize text-white md:text-5xl lg:text-6xl">
             about me
           </h2>
 

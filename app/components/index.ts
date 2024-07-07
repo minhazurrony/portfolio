@@ -10,3 +10,4 @@ export { default as Experiences } from "./Experiences";
 export { default as Timeline } from "./Timeline";
 export { default as Projects } from "./Projects";
 export { default as ProjectCard } from "./ProjectCard";
+export { default as Contact } from "./Contact";

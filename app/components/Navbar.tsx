@@ -1,21 +1,20 @@
 import Link from "next/link";
 import React from "react";
-import { BsCodeSlash } from "react-icons/bs";
-import { CiLinkedin } from "react-icons/ci";
-import { FaSquareGithub } from "react-icons/fa6";
+import { FaSquareGithub, FaLinkedin, FaCode } from "react-icons/fa6";
+
 import { ContainerWrapper } from "@/components";
 
 function SocialIcons() {
   return (
-    <div className="md:space-x-5 flex items-end space-x-3">
+    <div className="flex items-end space-x-3 md:space-x-5">
       <Link
         rel="noopener noreferrer"
         target="_blank"
         href={"https://www.linkedin.com/in/minhazurrony/"}
-        className="inline-flex items-center gap-1"
+        className="group flex space-x-2"
       >
-        <CiLinkedin className="text-brand-one text-2xl" />
-        <span className="font-ibm-plex-mono hover:text-brand-one md:inline hidden text-base leading-5 text-white duration-300 ease-in-out">
+        <FaLinkedin className="text-xl text-brand-one" />
+        <span className="hidden text-white duration-300 ease-in-out group-hover:text-brand-one md:inline">
           LinkedIn
         </span>
       </Link>
@@ -24,10 +23,10 @@ function SocialIcons() {
         rel="noopener noreferrer"
         target="_blank"
         href={"https://www.github.com/minhazurrony/"}
-        className="inline-flex items-center gap-1"
+        className="group flex space-x-2"
       >
-        <FaSquareGithub className="text-brand-one text-2xl" />
-        <span className="font-ibm-plex-mono hover:text-brand-one md:inline hidden text-base leading-5 text-white duration-300 ease-in-out">
+        <FaSquareGithub className="text-xl text-brand-one" />
+        <span className="hidden text-white duration-300 ease-in-out group-hover:text-brand-one md:inline">
           GitHub
         </span>
       </Link>
@@ -38,12 +37,10 @@ function SocialIcons() {
 function Navbar() {
   return (
     <ContainerWrapper className="bg-bg-one">
-      <nav className="border-grey md:mx-auto container flex items-center justify-between border-b py-8">
+      <nav className="container flex items-end justify-between border-b border-grey py-8 md:mx-auto">
         <div className="flex items-center">
-          <BsCodeSlash className="text-brand-one md:text-3xl text-2xl" />
-          <span className="font-ibm-plex-mono md:text-2xl md:leading-6 px-2 text-base leading-5 text-white">
-            Minhazur
-          </span>
+          <FaCode className="text-2xl text-brand-one md:text-3xl" />
+          <span className="px-2 text-white md:text-xl">Minhazur</span>
         </div>
         <SocialIcons />
       </nav>

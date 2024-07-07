@@ -15,8 +15,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${ubuntu.variable} ${ibm_plex_mono.variable}`}>
+    <html lang="en" className="font-ibm-plex-mono">
+      <body
+        className={`${ubuntu.variable} ${ibm_plex_mono.variable} font-ibm-plex-mono`}
+      >
         <Navbar />
         {children}
         <Footer />

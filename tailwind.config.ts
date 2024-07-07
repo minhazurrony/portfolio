@@ -1,7 +1,5 @@
 import type { Config } from "tailwindcss";
 
-const { fontFamily } = require("tailwindcss/defaultTheme");
-
 const config: Config = {
   content: ["./app/**/*.{js,ts,jsx,tsx,mdx}"],
   plugins: [],
@@ -10,7 +8,6 @@ const config: Config = {
       fontFamily: {
         ubuntu: ["var(--font-ubuntu)"],
         "ibm-plex-mono": ["var(--font-ibm-plex-mono)"],
-        ...fontFamily,
       },
     },
     colors: {

@@ -14,7 +14,7 @@ function Skill(props: SkillProps) {
     <div className="flex flex-col items-center gap-4">
       <props.icon className={`text-6xl`} style={{ color: props.iconColor }} />
 
-      <h4 className="text-md font-ibm-plex-mono text-white">{props.label}</h4>
+      <h4 className="text-md text-white">{props.label}</h4>
     </div>
   );
 }

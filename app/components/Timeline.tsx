@@ -27,13 +27,11 @@ const TimelineDetails = ({ data, index }: TimelineDetailsProps) => {
         <h1 className="font-ubuntu text-2xl text-brand-one">
           {data[index].designation}
         </h1>
-        <h4 className="font-ibm-plex-mono text-sm italic text-white">
+        <h4 className="text-sm italic text-white">
           {data[index].organization}
         </h4>
-        <h6 className="mb-4 font-ibm-plex-mono text-brand-one">
-          {data[index].serviceYearRange}
-        </h6>
-        <ul className="list-disc font-ibm-plex-mono text-sm text-white">
+        <h6 className="mb-4 text-brand-one">{data[index].serviceYearRange}</h6>
+        <ul className="list-disc text-sm text-white">
           {data[index].achievements.map((achievement) => {
             return (
               <li key={achievement} className="mb-4">

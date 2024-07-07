@@ -26,46 +26,46 @@ function Hero() {
                 height={96}
                 className="mb-4 h-[96px] rounded-full border-2 border-brand-two object-cover"
               />
-              <h1 className="font-ibm-plex-mono text-3xl font-medium capitalize text-white">
+              <h1 className="text-3xl font-medium capitalize text-white">
                 minhazur
               </h1>
-              <p className="font-ibm-plex-mono text-[14px] capitalize text-white">
+              <p className="text-[14px] capitalize text-white">
                 front-end developer
               </p>
             </div>
             <div className="flex flex-col space-y-3">
-              <div className="flex items-center gap-4 font-ibm-plex-mono">
+              <div className="flex items-center gap-4">
                 <IoMailOutline className="self-end text-brand-one" />
                 <p className="text-[14px] text-white">
                   minhazur.rony@gmail.com
                 </p>
               </div>
-              <div className="flex items-center gap-4 font-ibm-plex-mono">
+              <div className="flex items-center gap-4">
                 <IoLocationOutline className="self-end text-brand-one" />
                 <p className="text-[14px] text-white">Bangladesh</p>
               </div>
-              <div className="flex items-center gap-4 font-ibm-plex-mono">
+              <div className="flex items-center gap-4">
                 <IoBriefcaseOutline className="self-end text-brand-one" />
                 <p className="text-[14px] text-white">Full-time / Freelance</p>
               </div>
-              <div className="flex items-center gap-4 font-ibm-plex-mono">
+              <div className="flex items-center gap-4">
                 <IoIosLink className="self-end text-brand-one" />
                 <p className="text-[14px] text-white">
                   www.github.com/minhazurrony
                 </p>
               </div>
               <div className="flex space-x-2">
-                <p className="rounded-md bg-brand-one px-2 font-ibm-plex-mono text-[14px] leading-[2] text-bg-one">
+                <p className="rounded-md bg-brand-one px-2 text-[14px] leading-[2] text-bg-one">
                   React
                 </p>
-                <p className="rounded-md bg-brand-one px-2 font-ibm-plex-mono text-[14px] leading-[2] text-bg-one">
+                <p className="rounded-md bg-brand-one px-2 text-[14px] leading-[2] text-bg-one">
                   Next
                 </p>
-                <p className="rounded-md bg-brand-one px-2 font-ibm-plex-mono text-[14px] leading-[2] text-bg-one">
+                <p className="rounded-md bg-brand-one px-2 text-[14px] leading-[2] text-bg-one">
                   JS
                 </p>
-                <p className="rounded-md bg-brand-one px-2 font-ibm-plex-mono text-[14px] leading-[2] text-bg-one">
-                  TS
+                <p className="rounded-md bg-brand-one px-2 text-[14px] leading-[2] text-bg-one">
+                  TypeScript
                 </p>
               </div>
             </div>
@@ -93,7 +93,7 @@ function Hero() {
                 </span>
               </h1>
 
-              <p className="font-ibm-plex-mono text-[14px] text-white">
+              <p className="text-[14px] text-white">
                 <span className="text-brand-two">{"<p>"}</span> <br /> I help
                 business grow by crafting amazing web experiences. If you’re
                 looking for a developer that likes to get stuff done <br />
@@ -102,21 +102,15 @@ function Hero() {
             </div>
             <div className="flex h-[378px] w-4/5 flex-col items-start justify-around rounded-[70px] bg-bg-two px-8 py-12 md:w-[215px]">
               <div className="flex items-center justify-center gap-4">
-                <h3 className="font-ibm-plex-mono text-[48px] text-brand-one">
-                  4
-                </h3>
+                <h3 className="text-[48px] text-brand-one">4</h3>
                 <p className="capitalize text-white">programming language</p>
               </div>
               <div className="flex items-center justify-center gap-4">
-                <h3 className="font-ibm-plex-mono text-[48px] text-brand-one">
-                  6
-                </h3>
+                <h3 className="text-[48px] text-brand-one">6</h3>
                 <p className="capitalize text-white">development tools</p>
               </div>
               <div className="flex items-center justify-center gap-4">
-                <h3 className="font-ibm-plex-mono text-[48px] text-brand-one">
-                  4
-                </h3>
+                <h3 className="text-[48px] text-brand-one">4</h3>
                 <p className="capitalize text-white">years of experiences</p>
               </div>
             </div>

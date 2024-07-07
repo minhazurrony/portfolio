@@ -14,7 +14,7 @@ function About() {
             about me
           </h2>
 
-          <pre className="whitespace-pre-wrap break-words rounded-2xl bg-bg-one/40 px-10 py-6 font-ibm-plex-mono text-white backdrop-blur-sm">
+          <pre className="whitespace-pre-wrap break-words rounded-2xl bg-bg-one/40 px-10 py-6 text-white backdrop-blur-sm">
             <span className="mb-4 block text-brand-one">{`<p>`}</span>
             <span className="text-xl capitalize text-brand-one">hello!</span>
             <br />

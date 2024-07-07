@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Navbar } from "@/components";
+import { Footer, Navbar } from "@/components";
 import { ubuntu, ibm_plex_mono } from "../public/assets/fonts";
 
 export const metadata: Metadata = {
@@ -19,6 +19,7 @@ export default function RootLayout({
       <body className={`${ubuntu.variable} ${ibm_plex_mono.variable}`}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

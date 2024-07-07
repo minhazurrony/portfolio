@@ -22,6 +22,7 @@ const config: Config = {
       "brand-two": "#98FAEC",
       grey: "#43454D",
       white: "#FFFFFF",
+      red: "#EF233C",
     },
   },
 };

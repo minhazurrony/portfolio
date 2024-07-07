@@ -6,6 +6,7 @@ import {
   FieldValues,
   Path,
 } from "react-hook-form";
+import ErrorMessage from "./ErrorMessage";
 
 type InputProps<T extends FieldValues> = {
   name: Path<T>;
@@ -35,13 +36,15 @@ function Input<T extends FieldValues>({
         render={({ field }) => (
           <input
             {...field}
+            id={name}
+            autoComplete="false"
             type="text"
-            name={name}
             placeholder={placeholder}
-            className="w-full border-b-2 border-brand-two bg-transparent py-2 font-ubuntu font-light text-white caret-brand-one transition-all duration-300 ease-in focus:border-brand-one focus:outline-0"
+            className={`w-full border-b-2 border-brand-two bg-transparent py-2 font-ubuntu font-light text-white caret-brand-one transition-all duration-300 ease-in focus:border-brand-one focus:outline-0 ${error && "border-red focus:border-red"}`}
           />
         )}
       />
+      {error ? <ErrorMessage message={error.message} /> : null}
     </div>
   );
 }

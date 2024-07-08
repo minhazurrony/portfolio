@@ -1,12 +1,14 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import { FaSquareGithub, FaLinkedin, FaCode } from "react-icons/fa6";
 
 import { ContainerWrapper } from "@/components";
+import { useVerticalScroll } from "@/hooks";
 
 function SocialIcons() {
   return (
-    <div className="flex items-end space-x-3 backdrop-blur-md md:space-x-5">
+    <div className="flex items-end space-x-3 md:space-x-5">
       <Link
         rel="noopener noreferrer"
         target="_blank"
@@ -35,9 +37,13 @@ function SocialIcons() {
 }
 
 function Navbar() {
+  const { scrolling } = useVerticalScroll();
+
   return (
-    <ContainerWrapper className="sticky top-0 z-20 bg-bg-one/95">
-      <nav className="container flex items-end justify-between border-b border-grey py-8 md:mx-auto">
+    <ContainerWrapper className={`sticky top-0 z-20 bg-bg-one`}>
+      <nav
+        className={`container flex items-end justify-between border-b border-grey transition-all duration-100 ease-linear md:mx-auto ${scrolling ? "py-6" : "py-8"}`}
+      >
         <div className="flex items-center">
           <FaCode className="text-2xl text-brand-one md:text-3xl" />
           <span className="px-2 text-white md:text-xl">Minhazur</span>

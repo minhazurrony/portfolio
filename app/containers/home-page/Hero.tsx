@@ -78,7 +78,7 @@ function Hero() {
               </div>
             </div>
           </Reveal>
-          <div className="flex flex-wrap items-center justify-center gap-10 md:flex-nowrap">
+          <div className="flex flex-wrap items-center justify-center gap-10 lg:flex-nowrap">
             <div className="flex-2" ref={ref}>
               <h1 className="mb-8 font-ubuntu text-4xl capitalize leading-none text-white md:text-5xl lg:text-6xl">
                 <m.span
@@ -167,8 +167,8 @@ function Hero() {
                 </m.span>
               </p>
             </div>
-            <Reveal>
-              <div className="flex w-4/5 flex-col gap-4 rounded-[70px] bg-bg-two px-8 py-12 md:w-[215px]">
+            <Reveal className="w-4/5 md:w-1/2">
+              <div className="flex flex-col gap-4 rounded-[70px] bg-bg-two px-8 py-12">
                 <Stats title="production apps" count={15} />
                 <Stats title="development tools" count={6} />
                 <Stats title="years of exp" count={4} />
@@ -228,7 +228,7 @@ function Stats({ count, title }: StatsProps) {
   }, [isInView]);
 
   return (
-    <div className="text-center md:text-left">
+    <div className="text-center">
       <m.h3 ref={ref} className="text-[48px] text-brand-one">
         {rounded}
       </m.h3>

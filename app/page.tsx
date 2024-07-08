@@ -5,7 +5,7 @@ import {
   Experiences,
   Projects,
   Contact,
-} from "@/components";
+} from "@/containers/home-page";
 
 export default function Home() {
   return (

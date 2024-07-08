@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Footer, Navbar } from "@/components";
+import { Footer, Navbar } from "@/layouts/global";
 import { ubuntu, ibm_plex_mono } from "../public/assets/fonts";
 
 export const metadata: Metadata = {

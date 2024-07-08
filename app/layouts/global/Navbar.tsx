@@ -6,7 +6,7 @@ import { ContainerWrapper } from "@/components";
 
 function SocialIcons() {
   return (
-    <div className="flex items-end space-x-3 md:space-x-5">
+    <div className="flex items-end space-x-3 backdrop-blur-md md:space-x-5">
       <Link
         rel="noopener noreferrer"
         target="_blank"
@@ -36,7 +36,7 @@ function SocialIcons() {
 
 function Navbar() {
   return (
-    <ContainerWrapper className="bg-bg-one">
+    <ContainerWrapper className="sticky top-0 z-20 bg-bg-one/95">
       <nav className="container flex items-end justify-between border-b border-grey py-8 md:mx-auto">
         <div className="flex items-center">
           <FaCode className="text-2xl text-brand-one md:text-3xl" />

@@ -11,13 +11,10 @@ import { GoDownload } from "react-icons/go";
 
 function Hero() {
   return (
-    <ContainerWrapper className="bg-bg-one pb-[64px] md:pb-[128px]">
+    <ContainerWrapper className="bg-bg-one pb-[64px] md:pb-[128px] xl:pt-[94px]">
       <div className="container mx-auto flex flex-col items-center justify-center py-[64px]">
-        <h1 className="hidden pb-[64px] font-ubuntu text-[5rem] capitalize text-brand-two md:block">
-          developer
-        </h1>
         <div className="flex flex-wrap items-center justify-around gap-8 md:gap-24 lg:gap-32 xl:flex-nowrap">
-          <div className="rounded-br-[160px] rounded-tl-[160px] border-2 border-white px-8 py-24 ring-2 ring-offset-2 ring-offset-brand-one">
+          <div className="rounded-br-[140px] rounded-tl-[140px] border-2 border-white px-8 py-12 ring-2 ring-offset-2 ring-offset-brand-one">
             <div className="mb-4 flex flex-col items-center justify-center">
               <Image
                 src={"/assets/images/minhazur.png"}
@@ -34,39 +31,19 @@ function Hero() {
               </p>
             </div>
             <div className="flex flex-col space-y-3">
-              <div className="flex items-center gap-4">
-                <IoMailOutline className="self-end text-brand-one" />
-                <p className="text-[14px] text-white">
-                  minhazur.rony@gmail.com
-                </p>
-              </div>
-              <div className="flex items-center gap-4">
-                <IoLocationOutline className="self-end text-brand-one" />
-                <p className="text-[14px] text-white">Bangladesh</p>
-              </div>
-              <div className="flex items-center gap-4">
-                <IoBriefcaseOutline className="self-end text-brand-one" />
-                <p className="text-[14px] text-white">Full-time / Freelance</p>
-              </div>
-              <div className="flex items-center gap-4">
-                <IoIosLink className="self-end text-brand-one" />
-                <p className="text-[14px] text-white">
-                  www.github.com/minhazurrony
-                </p>
-              </div>
+              <UserInfo label="minhazur.rony@gmail.com" icon={IoMailOutline} />
+              <UserInfo label="Bangladesh" icon={IoLocationOutline} />
+              <UserInfo
+                label="Full-time / Freelance"
+                icon={IoBriefcaseOutline}
+              />
+              <UserInfo label="www.github.com/minhazurrony" icon={IoIosLink} />
+
               <div className="flex space-x-2">
-                <p className="rounded-md bg-brand-one px-2 text-[14px] leading-[2] text-bg-one">
-                  React
-                </p>
-                <p className="rounded-md bg-brand-one px-2 text-[14px] leading-[2] text-bg-one">
-                  Next
-                </p>
-                <p className="rounded-md bg-brand-one px-2 text-[14px] leading-[2] text-bg-one">
-                  JS
-                </p>
-                <p className="rounded-md bg-brand-one px-2 text-[14px] leading-[2] text-bg-one">
-                  TypeScript
-                </p>
+                <Tag label="React" />
+                <Tag label="Next" />
+                <Tag label="JS" />
+                <Tag label="TypeScript" />
               </div>
             </div>
             <div className="mt-8 flex justify-center">
@@ -100,19 +77,10 @@ function Hero() {
                 <span className="text-brand-two">{"</p>"}</span>
               </p>
             </div>
-            <div className="flex h-[378px] w-4/5 flex-col items-start justify-around rounded-[70px] bg-bg-two px-8 py-12 md:w-[215px]">
-              <div className="flex items-center justify-center gap-4">
-                <h3 className="text-[48px] text-brand-one">4</h3>
-                <p className="capitalize text-white">programming language</p>
-              </div>
-              <div className="flex items-center justify-center gap-4">
-                <h3 className="text-[48px] text-brand-one">6</h3>
-                <p className="capitalize text-white">development tools</p>
-              </div>
-              <div className="flex items-center justify-center gap-4">
-                <h3 className="text-[48px] text-brand-one">4</h3>
-                <p className="capitalize text-white">years of experiences</p>
-              </div>
+            <div className="flex w-4/5 flex-col gap-4 rounded-[70px] bg-bg-two px-8 py-12 md:w-[215px]">
+              <Stats title="production apps" count="15+" />
+              <Stats title="development tools" count="6+" />
+              <Stats title="years of exp" count="4+" />
             </div>
           </div>
         </div>
@@ -122,3 +90,41 @@ function Hero() {
 }
 
 export default Hero;
+
+type UserInfoProps = {
+  label: string;
+  icon: React.ComponentType<{
+    className?: string;
+  }>;
+};
+
+function UserInfo(props: UserInfoProps) {
+  return (
+    <div className="flex items-center gap-4">
+      <props.icon className="self-end text-brand-one" />
+      <p className="text-[14px] text-white">{props.label}</p>
+    </div>
+  );
+}
+
+function Tag({ label }: { label: string }) {
+  return (
+    <p className="rounded-md bg-brand-one px-2 text-[14px] leading-[2] text-bg-one">
+      {label}
+    </p>
+  );
+}
+
+type StatsProps = {
+  count: string;
+  title: string;
+};
+
+function Stats({ count, title }: StatsProps) {
+  return (
+    <div className="text-center md:text-left">
+      <h3 className="text-[48px] text-brand-one">{count}</h3>
+      <p className="capitalize text-white">{title}</p>
+    </div>
+  );
+}

@@ -79,7 +79,7 @@ function Contact() {
           <Reveal>
             <button
               type="submit"
-              className="rounded-full border-2 border-brand-one bg-bg-two px-6 py-2 font-ubuntu capitalize text-brand-one transition-all duration-300 ease-in hover:bg-brand-one hover:text-grey"
+              className="rounded-full border-2 border-transparent bg-brand-one px-6 py-2 font-ubuntu capitalize text-grey transition-all duration-300 ease-in hover:border-brand-one hover:bg-bg-two hover:text-brand-one"
             >
               send message <PiPaperPlaneTiltBold className="ml-2 inline" />
             </button>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Footer, Navbar } from "@/layouts/global";
 import { ubuntu, ibm_plex_mono } from "../public/assets/fonts";
+import { LazyMotionContainer } from "./components";
 
 export const metadata: Metadata = {
   title: "Minhazur Rahman",
@@ -17,11 +18,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="font-ibm-plex-mono">
       <body
-        className={`${ubuntu.variable} ${ibm_plex_mono.variable} font-ibm-plex-mono`}
+        className={`${ubuntu.variable} ${ibm_plex_mono.variable} bg-bg-one font-ibm-plex-mono`}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <LazyMotionContainer>
+          <Navbar />
+          {children}
+          <Footer />
+        </LazyMotionContainer>
       </body>
     </html>
   );

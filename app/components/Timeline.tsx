@@ -1,4 +1,5 @@
 import React from "react";
+import Reveal from "./Reveal";
 
 type TimelineItem = {
   organization: string;
@@ -21,26 +22,32 @@ const TimelineDetails = ({ data, index }: TimelineDetailsProps) => {
 
   return (
     <div className="flex-1">
-      <div
-        className={`rounded-xl bg-bg-one p-12 ${dataLength === index ? "mb-0" : "mb-8"}`}
-      >
-        <h1 className="font-ubuntu text-2xl text-brand-one">
-          {data[index].designation}
-        </h1>
-        <h4 className="text-sm italic text-white">
-          {data[index].organization}
-        </h4>
-        <h6 className="mb-4 text-brand-one">{data[index].serviceYearRange}</h6>
-        <ul className="list-disc text-sm text-white">
-          {data[index].achievements.map((achievement) => {
-            return (
-              <li key={achievement} className="mb-4">
-                {achievement}
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      <Reveal>
+        <div
+          className={`rounded-xl bg-bg-one p-12 ${dataLength === index ? "mb-0" : "mb-8"}`}
+        >
+          <Reveal>
+            <h1 className="font-ubuntu text-2xl text-brand-one">
+              {data[index].designation}
+            </h1>
+          </Reveal>
+          <h4 className="text-sm italic text-white">
+            {data[index].organization}
+          </h4>
+          <h6 className="mb-4 text-brand-one">
+            {data[index].serviceYearRange}
+          </h6>
+          <ul className="list-disc text-sm text-white">
+            {data[index].achievements.map((achievement) => {
+              return (
+                <li key={achievement} className="mb-4">
+                  {achievement}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </Reveal>
     </div>
   );
 };

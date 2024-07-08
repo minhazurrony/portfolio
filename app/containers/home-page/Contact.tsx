@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { ContainerWrapper, ScrollBottom, Title } from "@/components";
+import { ContainerWrapper, Reveal, ScrollBottom, Title } from "@/components";
 import { Input, Textarea } from "@/components/form";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { PiPaperPlaneTiltBold } from "react-icons/pi";
@@ -76,12 +76,14 @@ function Contact() {
               error={errors.message}
             />
           </div>
-          <button
-            type="submit"
-            className="rounded-full border-2 border-brand-one bg-bg-two px-6 py-2 font-ubuntu capitalize text-brand-one transition-all duration-300 ease-in hover:bg-brand-one hover:text-grey"
-          >
-            send message <PiPaperPlaneTiltBold className="ml-2 inline" />
-          </button>
+          <Reveal>
+            <button
+              type="submit"
+              className="rounded-full border-2 border-brand-one bg-bg-two px-6 py-2 font-ubuntu capitalize text-brand-one transition-all duration-300 ease-in hover:bg-brand-one hover:text-grey"
+            >
+              send message <PiPaperPlaneTiltBold className="ml-2 inline" />
+            </button>
+          </Reveal>
         </form>
       </div>
     </ContainerWrapper>

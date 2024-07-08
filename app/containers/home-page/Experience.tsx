@@ -2,7 +2,7 @@ import React from "react";
 import { ContainerWrapper, ScrollBottom, Timeline, Title } from "@/components";
 import { EXPERIENCES } from "@/constants/experience";
 
-function Experiences() {
+function Experience() {
   return (
     <ContainerWrapper className="bg-bg-two p-[128px]">
       <div className="mb-[128px] hidden lg:block">
@@ -20,4 +20,4 @@ function Experiences() {
   );
 }
 
-export default Experiences;
+export default Experience;

@@ -2,7 +2,7 @@ import {
   Hero,
   About,
   Skills,
-  Experiences,
+  Experience,
   Projects,
   Contact,
 } from "@/containers/home-page";
@@ -13,7 +13,7 @@ export default function Home() {
       <Hero />
       <About />
       <Skills />
-      <Experiences />
+      <Experience />
       <Projects />
       <Contact />
     </main>

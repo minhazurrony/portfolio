@@ -1,13 +1,36 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { IoIosLink } from "react-icons/io";
+import { m, useAnimation, useInView } from "framer-motion";
 
 type ProjectCardProps = {
   name: string;
   imageUrl: string;
+  idx: number;
 };
 
-function ProjectCard({ name, imageUrl }: ProjectCardProps) {
+const varients = {
+  hidden: { opacity: 0 },
+  visible: (idx: number) => ({
+    opacity: 1,
+    transition: {
+      delay: idx * 0.3,
+      duration: 0.5,
+    },
+  }),
+};
+
+function ProjectCard({ name, imageUrl, idx }: ProjectCardProps) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const animationControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      animationControls.start("visible");
+    }
+  }, [isInView]);
   return (
     <div className="group">
       <div className="relative mb-4 rounded-xl bg-bg-two hover:cursor-pointer">
@@ -18,16 +41,23 @@ function ProjectCard({ name, imageUrl }: ProjectCardProps) {
         </div>
         <Image
           src={imageUrl}
-          alt=""
+          alt={`project-image-${idx}`}
           height={450}
           width={450}
           className="rounded-xl brightness-50 transition-all duration-300 ease-in hover:brightness-75"
           style={{ height: "350px", width: "100%", objectFit: "cover" }}
         />
       </div>
-      <h3 className="text-center font-ubuntu text-xl capitalize text-white transition-all duration-300 ease-in group-hover:text-brand-one">
+      <m.h3
+        ref={ref}
+        initial="hidden"
+        variants={varients}
+        animate={animationControls}
+        custom={idx}
+        className="text-center font-ubuntu text-xl capitalize text-white transition-all duration-300 ease-in group-hover:text-brand-one"
+      >
         {name}
-      </h3>
+      </m.h3>
     </div>
   );
 }

@@ -22,10 +22,12 @@ function Projects() {
         <ProjectCard
           name="movie info hub"
           imageUrl="/assets/images/about.jpg"
+          idx={0}
         />
         <ProjectCard
           name="covid-19 stats"
           imageUrl="/assets/images/about.jpg"
+          idx={1}
         />
       </div>
     </ContainerWrapper>

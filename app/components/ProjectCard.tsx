@@ -30,7 +30,7 @@ function ProjectCard({ name, imageUrl, idx }: ProjectCardProps) {
     if (isInView) {
       animationControls.start("visible");
     }
-  }, [isInView]);
+  }, [isInView, animationControls]);
   return (
     <div className="group">
       <div className="relative mb-4 rounded-xl bg-bg-two hover:cursor-pointer">

@@ -72,7 +72,7 @@ function About() {
                 animate={{ opacity: isInView ? 1 : 0 }}
                 transition={{ duration: 0.5, delay: 1.2 }}
               >
-                When I'm not coding, I am{" "}
+                When I&apos;m not coding, I am{" "}
                 <span className="text-brand-one">writing bolgs</span>, reading,
                 or picking up some new hands-on adventurous project like{" "}
                 <span className="text-brand-one">bike riding</span>.

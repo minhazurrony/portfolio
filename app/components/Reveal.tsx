@@ -17,7 +17,7 @@ function Reveal({ children, className }: RevealProps) {
     if (isInView) {
       mainControls.start("visible");
     }
-  }, [isInView]);
+  }, [isInView, mainControls]);
 
   return (
     <m.div

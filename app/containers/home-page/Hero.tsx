@@ -103,7 +103,7 @@ function Hero() {
                   animate={{ opacity: isInView ? 1 : 0, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
                 >
-                  i'm {""}
+                  i&apos;m {""}
                   <m.span
                     className="text-brand-one"
                     initial={{ opacity: 0, y: 20 }}
@@ -225,7 +225,7 @@ function Stats({ count, title }: StatsProps) {
         delay: 0.3,
       });
     }
-  }, [isInView]);
+  }, [isInView, count, initialValue]);
 
   return (
     <div className="text-center">

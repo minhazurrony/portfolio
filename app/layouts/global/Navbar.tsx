@@ -1,14 +1,15 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import { FaSquareGithub, FaLinkedin, FaCode } from "react-icons/fa6";
-import { ContainerWrapper } from "@/components";
+import { FaSquareGithub, FaLinkedin } from "react-icons/fa6";
+import { ContainerWrapper, Logo } from "@/components";
 import { useVerticalScroll } from "@/hooks";
 import { m } from "framer-motion";
 
 function SocialIcons() {
   return (
-    <div className="flex items-end space-x-3 md:space-x-5">
+    <div className="flex items-center space-x-4 md:space-x-5">
+      {/* TODO: map over list of social icons array and refactor this component to a single item */}
       <m.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -18,10 +19,10 @@ function SocialIcons() {
           rel="noopener noreferrer"
           target="_blank"
           href={"https://www.linkedin.com/in/minhazurrony/"}
-          className="group flex space-x-2"
+          className="group flex items-center gap-2"
         >
-          <FaLinkedin className="text-xl text-brand-one" />
-          <span className="hidden text-white duration-300 ease-in-out group-hover:text-brand-one md:inline">
+          <FaLinkedin className="text-3xl text-brand-one" />
+          <span className="hidden font-ubuntu text-white duration-300 ease-in-out group-hover:text-brand-one md:inline">
             LinkedIn
           </span>
         </Link>
@@ -36,10 +37,10 @@ function SocialIcons() {
           rel="noopener noreferrer"
           target="_blank"
           href={"https://www.github.com/minhazurrony/"}
-          className="group flex space-x-2"
+          className="group flex items-center gap-2"
         >
-          <FaSquareGithub className="text-xl text-brand-one" />
-          <span className="hidden text-white duration-300 ease-in-out group-hover:text-brand-one md:inline">
+          <FaSquareGithub className="text-3xl text-brand-one" />
+          <span className="hidden font-ubuntu text-white duration-300 ease-in-out group-hover:text-brand-one md:inline">
             GitHub
           </span>
         </Link>
@@ -56,12 +57,9 @@ function Navbar() {
       className={`sticky top-0 z-20 ${scrolling ? "bg-bg-one/30 backdrop-blur-lg" : "bg-bg-one"}`}
     >
       <nav
-        className={`container flex items-end justify-between border-b border-grey py-8 transition-all duration-100 ease-linear md:mx-auto`}
+        className={`container flex items-center justify-between border-b border-grey py-2 transition-all duration-100 ease-linear md:mx-auto md:py-4`}
       >
-        <div className="flex items-center">
-          <FaCode className="text-2xl text-brand-one md:text-3xl" />
-          <span className="px-2 text-white md:text-xl">Minhazur</span>
-        </div>
+        <Logo />
         <SocialIcons />
       </nav>
     </ContainerWrapper>

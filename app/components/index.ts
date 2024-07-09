@@ -6,3 +6,4 @@ export { default as Timeline } from "./Timeline";
 export { default as ProjectCard } from "./ProjectCard";
 export { default as Reveal } from "./Reveal";
 export { default as LazyMotionContainer } from "./LazyMotionContainer";
+export { default as Logo } from "./Logo";

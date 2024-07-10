@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import { ContainerWrapper, Reveal } from "@/components";
+import { ContainerWrapper, Reveal, HeroContent } from "@/components";
 import Image from "next/image";
 import {
   IoMailOutline,
@@ -18,13 +18,10 @@ import {
 } from "framer-motion";
 
 function Hero() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
   return (
     <ContainerWrapper className="bg-bg-one pb-[64px] md:pb-[128px] xl:pt-[94px]">
       <div className="container mx-auto flex flex-col items-center justify-center py-[64px]">
-        <div className="flex flex-wrap items-center justify-around gap-8 md:gap-24 lg:gap-32 xl:flex-nowrap">
+        <div className="flex flex-wrap items-center justify-around gap-16 md:gap-24 lg:gap-32 xl:flex-nowrap xl:gap-12">
           <Reveal>
             <div className="rounded-br-[140px] rounded-tl-[140px] border-2 border-white px-8 py-12 ring-2 ring-offset-2 ring-offset-brand-one">
               <div className="mb-4 flex flex-col items-center justify-center">
@@ -78,96 +75,9 @@ function Hero() {
               </div>
             </div>
           </Reveal>
-          <div className="flex flex-wrap items-center justify-center gap-10 lg:flex-nowrap">
-            <div className="flex-2" ref={ref}>
-              <h1 className="mb-8 font-ubuntu text-4xl capitalize leading-none text-white md:text-5xl lg:text-6xl">
-                <m.span
-                  className="font-ibm-plex-mono text-[14px] lowercase text-brand-two"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: isInView ? 1 : 0, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                >
-                  {"<h1>"}
-                </m.span>
-                <br />
-                <m.span
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: isInView ? 1 : 0, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                >
-                  hey
-                </m.span>
-                <br />
-                <m.span
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: isInView ? 1 : 0, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.6 }}
-                >
-                  i&apos;m {""}
-                  <m.span
-                    className="text-brand-one"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: isInView ? 1 : 0, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.8 }}
-                  >
-                    minhazur
-                  </m.span>
-                  <m.span
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: isInView ? 1 : 0, y: 0 }}
-                    transition={{ duration: 0.5, delay: 1.0 }}
-                  >
-                    ,
-                  </m.span>
-                </m.span>
-                <br />
-                <m.span
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: isInView ? 1 : 0, y: 0 }}
-                  transition={{ duration: 0.5, delay: 1.2 }}
-                >
-                  front-end developer
-                </m.span>
-                <m.span
-                  className="font-ibm-plex-mono text-[14px] lowercase text-brand-two"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: isInView ? 1 : 0, y: 0 }}
-                  transition={{ duration: 0.5, delay: 1.4 }}
-                >
-                  {"</h1>"}
-                </m.span>
-              </h1>
-
-              <p className="text-[14px] text-white">
-                <m.span
-                  className="text-brand-two"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: isInView ? 1 : 0, y: 0 }}
-                  transition={{ duration: 0.5, delay: 1.4 }}
-                >
-                  {"<p>"}
-                </m.span>
-                <br />
-                <m.span
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: isInView ? 1 : 0, y: 0 }}
-                  transition={{ duration: 0.5, delay: 1.6 }}
-                >
-                  I help business grow by crafting amazing web experiences. If
-                  you’re looking for a developer that likes to get stuff done
-                </m.span>
-                <br />
-                <m.span
-                  className="text-brand-two"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: isInView ? 1 : 0, y: 0 }}
-                  transition={{ duration: 0.5, delay: 1.8 }}
-                >
-                  {"</p>"}
-                </m.span>
-              </p>
-            </div>
-            <Reveal className="w-4/5 md:w-1/2">
+          <div className="flex grow flex-wrap items-center justify-center gap-16 lg:flex-nowrap lg:gap-8">
+            <HeroContent />
+            <Reveal className="w-full lg:w-3/12">
               <div className="flex flex-col gap-4 rounded-[70px] bg-bg-two px-8 py-12">
                 <Stats title="production apps" count={15} />
                 <Stats title="development tools" count={6} />

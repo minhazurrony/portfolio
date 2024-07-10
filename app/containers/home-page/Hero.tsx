@@ -65,8 +65,8 @@ function Hero() {
               </div>
               <div className="mt-8 flex justify-center">
                 <Reveal>
-                  <button className="text-md flex items-center rounded-full border-2 bg-white px-4 py-1 font-ubuntu text-bg-one duration-300 ease-in hover:border-brand-one hover:text-bg-two">
-                    Download CV{" "}
+                  <button className="text-md flex items-center rounded-full border-2 border-brand-one bg-bg-two px-4 py-1 font-ubuntu text-white duration-300 ease-in hover:bg-brand-one hover:text-grey">
+                    Download CV
                     <span className="pl-2">
                       <GoDownload className="text-xl" />
                     </span>
@@ -139,7 +139,7 @@ function Stats({ count, title }: StatsProps) {
 
   return (
     <div className="text-center">
-      <m.h3 ref={ref} className="text-[48px] text-brand-one">
+      <m.h3 ref={ref} className="font-ubuntu text-[48px] text-brand-one">
         {rounded}
       </m.h3>
       <Reveal>

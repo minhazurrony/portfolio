@@ -48,7 +48,7 @@ function About() {
                 transition={{ duration: 0.5, delay: 0.8 }}
               >
                 My name is Minhazur Rahman and I specialize in web developement
-                that utilizes
+                that utilizes {""}
                 <span className="text-brand-one">JavaScript</span>,{" "}
                 <span className="text-brand-one">React</span>,{" "}
                 <span className="text-brand-one">Next.js</span> and{" "}

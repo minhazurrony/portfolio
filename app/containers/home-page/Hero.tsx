@@ -16,12 +16,13 @@ import {
   useMotionValue,
   useTransform,
 } from "framer-motion";
+import Link from "next/link";
 
 function Hero() {
   return (
     <ContainerWrapper className="bg-bg-one pb-[64px] md:pb-[128px] xl:pt-[94px]">
       <div className="container mx-auto flex flex-col items-center justify-center py-[64px]">
-        <div className="flex flex-wrap items-center justify-around gap-16 md:gap-24 lg:gap-32 xl:flex-nowrap xl:gap-12">
+        <div className="flex w-full flex-wrap items-center justify-center gap-16 xl:flex-nowrap xl:justify-between">
           <Reveal>
             <div className="rounded-br-[140px] rounded-tl-[140px] border-2 border-white px-8 py-12 ring-2 ring-offset-2 ring-offset-brand-one">
               <div className="mb-4 flex flex-col items-center justify-center">
@@ -65,26 +66,37 @@ function Hero() {
               </div>
               <div className="mt-8 flex justify-center">
                 <Reveal>
-                  <button className="text-md flex items-center rounded-full border-2 border-brand-one bg-bg-two px-4 py-1 font-ubuntu text-white duration-300 ease-in hover:bg-brand-one hover:text-grey">
+                  <Link
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://flowcv.com/resume/bdrsqij3s0"
+                    className="text-md flex items-center rounded-full border-2 border-brand-two bg-brand-two px-4 py-1 font-ubuntu text-grey duration-300 ease-in hover:border-brand-one hover:bg-brand-one"
+                  >
                     Download CV
                     <span className="pl-2">
                       <GoDownload className="text-xl" />
                     </span>
-                  </button>
+                  </Link>
+                  {/* <button className="text-md flex items-center rounded-full border-2 border-brand-two bg-brand-two px-4 py-1 font-ubuntu text-grey duration-300 ease-in hover:border-brand-one hover:bg-brand-one">
+                    Download CV
+                    <span className="pl-2">
+                      <GoDownload className="text-xl" />
+                    </span>
+                  </button> */}
                 </Reveal>
               </div>
             </div>
           </Reveal>
-          <div className="flex grow flex-wrap items-center justify-center gap-16 lg:flex-nowrap lg:gap-8">
+          <div className="w-full lg:w-auto">
             <HeroContent />
-            <Reveal className="w-full lg:w-3/12">
-              <div className="flex flex-col gap-4 rounded-[70px] bg-bg-two px-8 py-12">
-                <Stats title="production apps" count={15} />
-                <Stats title="development tools" count={6} />
-                <Stats title="years of exp" count={4} />
-              </div>
-            </Reveal>
           </div>
+          <Reveal className="w-full lg:w-3/12">
+            <div className="flex flex-col gap-4 rounded-[70px] bg-bg-two px-8 py-12">
+              <Stats title="production apps" count={15} />
+              <Stats title="development tools" count={6} />
+              <Stats title="years of exp" count={4} />
+            </div>
+          </Reveal>
         </div>
       </div>
     </ContainerWrapper>
@@ -111,7 +123,7 @@ function UserInfo(props: UserInfoProps) {
 
 function Tag({ label }: { label: string }) {
   return (
-    <p className="rounded-md bg-brand-one px-2 text-[14px] leading-[2] text-bg-one">
+    <p className="rounded-md border border-brand-one bg-bg-two px-2 text-[14px] leading-[2] text-brand-one">
       {label}
     </p>
   );

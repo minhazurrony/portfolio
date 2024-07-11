@@ -65,7 +65,7 @@ function Hero() {
               </div>
               <div className="mt-8 flex justify-center">
                 <Reveal>
-                  <button className="text-md flex items-center rounded-full border-2 border-brand-one bg-bg-two px-4 py-1 font-ubuntu text-white duration-300 ease-in hover:bg-brand-one hover:text-grey">
+                  <button className="text-md flex items-center rounded-full border-2 border-brand-two bg-brand-two px-4 py-1 font-ubuntu text-grey duration-300 ease-in hover:border-brand-one hover:bg-brand-one">
                     Download CV
                     <span className="pl-2">
                       <GoDownload className="text-xl" />
@@ -111,7 +111,7 @@ function UserInfo(props: UserInfoProps) {
 
 function Tag({ label }: { label: string }) {
   return (
-    <p className="rounded-md bg-brand-one px-2 text-[14px] leading-[2] text-bg-one">
+    <p className="rounded-md border border-brand-one bg-bg-two px-2 text-[14px] leading-[2] text-brand-one">
       {label}
     </p>
   );

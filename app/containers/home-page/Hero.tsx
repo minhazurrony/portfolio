@@ -16,6 +16,7 @@ import {
   useMotionValue,
   useTransform,
 } from "framer-motion";
+import Link from "next/link";
 
 function Hero() {
   return (
@@ -65,12 +66,23 @@ function Hero() {
               </div>
               <div className="mt-8 flex justify-center">
                 <Reveal>
-                  <button className="text-md flex items-center rounded-full border-2 border-brand-two bg-brand-two px-4 py-1 font-ubuntu text-grey duration-300 ease-in hover:border-brand-one hover:bg-brand-one">
+                  <Link
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://flowcv.com/resume/bdrsqij3s0"
+                    className="text-md flex items-center rounded-full border-2 border-brand-two bg-brand-two px-4 py-1 font-ubuntu text-grey duration-300 ease-in hover:border-brand-one hover:bg-brand-one"
+                  >
                     Download CV
                     <span className="pl-2">
                       <GoDownload className="text-xl" />
                     </span>
-                  </button>
+                  </Link>
+                  {/* <button className="text-md flex items-center rounded-full border-2 border-brand-two bg-brand-two px-4 py-1 font-ubuntu text-grey duration-300 ease-in hover:border-brand-one hover:bg-brand-one">
+                    Download CV
+                    <span className="pl-2">
+                      <GoDownload className="text-xl" />
+                    </span>
+                  </button> */}
                 </Reveal>
               </div>
             </div>

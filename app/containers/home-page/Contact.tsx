@@ -6,6 +6,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { PiPaperPlaneTiltBold } from "react-icons/pi";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import toast, { Toaster } from "react-hot-toast";
 
 const schema = z.object({
   name: z
@@ -26,12 +27,41 @@ function Contact() {
     handleSubmit,
     formState: { errors },
     control,
+    reset,
   } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
-    console.log("======> form data", data);
+    fetch(
+      `${process.env.NEXT_PUBLIC_FORM_API_URL}/${process.env.NEXT_PUBLIC_FORM_API_KEY}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          message: data.message,
+        }),
+      },
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.code === 200) {
+          toast.success("Message successfully sent.");
+          reset();
+        } else {
+          toast.error("Something went wrong.");
+          reset();
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        reset();
+      });
   };
 
   return (
@@ -86,6 +116,7 @@ function Contact() {
           </Reveal>
         </form>
       </div>
+      <Toaster />
     </ContainerWrapper>
   );
 }

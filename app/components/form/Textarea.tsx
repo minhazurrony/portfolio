@@ -25,18 +25,25 @@ function Textarea<T extends FieldValues>({
   error,
   control,
 }: TextareaProps<T>) {
+  // Determine the type of the field value based on T and Path<T>
+  type FieldValueType =
+    T extends Record<string, any>
+      ? T[Path<T>]
+      : T extends Array<any>
+        ? T[number]
+        : T;
   return (
     <>
-      <label htmlFor={name} className="font-ubuntu font-light text-brand-one">
+      <label className="font-ubuntu font-light text-brand-one">
         {label} {required ? <span className="text-brand-one">*</span> : null}
       </label>
       <Controller
         name={name}
         control={control}
+        defaultValue={"" as FieldValueType}
         render={({ field }) => (
           <textarea
             {...field}
-            id={name}
             rows={5}
             cols={10}
             placeholder={placeholder}

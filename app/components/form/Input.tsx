@@ -25,26 +25,36 @@ function Input<T extends FieldValues>({
   error,
   control,
 }: InputProps<T>) {
+  // Determine the type of the field value based on T and Path<T>
+  type FieldValueType =
+    T extends Record<string, any>
+      ? T[Path<T>]
+      : T extends Array<any>
+        ? T[number]
+        : T;
+
   return (
     <div className="w-full space-y-2">
-      <label htmlFor={name} className="font-ubuntu font-light text-brand-one">
-        {label} {required ? <span className="text-brand-one">*</span> : null}
+      <label className="font-ubuntu font-light text-brand-one">
+        {label} {required && <span className="text-brand-one">*</span>}
       </label>
       <Controller
         name={name}
         control={control}
+        defaultValue={"" as FieldValueType}
         render={({ field }) => (
           <input
             {...field}
-            id={name}
-            autoComplete="false"
+            autoComplete="off"
             type="text"
             placeholder={placeholder}
-            className={`w-full border-b-2 border-brand-two bg-transparent py-2 font-ubuntu font-light text-white caret-brand-one transition-all duration-300 ease-in focus:border-brand-one focus:outline-0 ${error && "border-red focus:border-red"}`}
+            className={`w-full border-b-2 border-brand-two bg-transparent py-2 font-ubuntu font-light text-white caret-brand-one transition-all duration-300 ease-in focus:border-brand-one focus:outline-0 ${
+              error ? "border-red focus:border-red" : ""
+            }`}
           />
         )}
       />
-      {error ? <ErrorMessage message={error.message} /> : null}
+      {error && <ErrorMessage message={error.message} />}
     </div>
   );
 }

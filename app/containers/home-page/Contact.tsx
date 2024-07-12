@@ -27,6 +27,7 @@ function Contact() {
     handleSubmit,
     formState: { errors },
     control,
+    reset,
   } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
@@ -51,11 +52,16 @@ function Contact() {
       .then((res) => {
         if (res.code === 200) {
           toast.success("Message successfully sent.");
+          reset();
         } else {
           toast.error("Something went wrong.");
+          reset();
         }
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.error(error);
+        reset();
+      });
   };
 
   return (

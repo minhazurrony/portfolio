@@ -77,12 +77,6 @@ function Hero() {
                       <GoDownload className="text-xl" />
                     </span>
                   </Link>
-                  {/* <button className="text-md flex items-center rounded-full border-2 border-brand-two bg-brand-two px-4 py-1 font-ubuntu text-grey duration-300 ease-in hover:border-brand-one hover:bg-brand-one">
-                    Download CV
-                    <span className="pl-2">
-                      <GoDownload className="text-xl" />
-                    </span>
-                  </button> */}
                 </Reveal>
               </div>
             </div>
@@ -93,7 +87,7 @@ function Hero() {
           <Reveal className="w-full lg:w-3/12">
             <div className="flex flex-col gap-4 rounded-[70px] bg-bg-two px-8 py-12">
               <Stats title="production apps" count={15} />
-              <Stats title="development tools" count={6} />
+              <Stats title="github contributions" count={4642} />
               <Stats title="years of exp" count={4} />
             </div>
           </Reveal>
@@ -143,8 +137,8 @@ function Stats({ count, title }: StatsProps) {
   useEffect(() => {
     if (isInView) {
       animate(initialValue, count, {
-        duration: 2,
-        delay: 0.3,
+        duration: 1,
+        delay: 0.2,
       });
     }
   }, [isInView, count, initialValue]);

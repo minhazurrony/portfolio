@@ -1,13 +1,54 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { LuExternalLink } from "react-icons/lu";
-import { m, useAnimation, useInView } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import Tag from "./Tag";
 import Link from "next/link";
 import { Project } from "@/constants/projects";
 
-function ProjectCard({
+type ProjectCardProps = Project & {
+  isActive: boolean;
+  animationDirection: "left" | "right";
+};
+
+const variants = {
+  hidden: (direction: string) => ({
+    opacity: 0,
+    x: direction === "left" ? 100 : -100,
+  }),
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
+const tagVariants = {
+  hidden: { opacity: 0 },
+  visible: (i: number) => ({
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      delay: i * 0.2,
+    },
+  }),
+};
+
+const nameVariants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.5,
+    },
+  },
+};
+
+const ProjectCard: React.FC<ProjectCardProps> = ({
   id,
   name,
   imageUrl,
@@ -15,18 +56,27 @@ function ProjectCard({
   date,
   techonologies,
   externalLink,
-}: Project) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  isActive,
+  animationDirection,
+}) => {
   const animationControls = useAnimation();
 
   useEffect(() => {
-    if (isInView) {
+    if (isActive) {
       animationControls.start("visible");
+    } else {
+      animationControls.start("hidden");
     }
-  }, [isInView, animationControls]);
+  }, [isActive, animationControls]);
+
   return (
-    <div className="rounded-xl bg-bg-two shadow-xl">
+    <motion.div
+      className="rounded-xl bg-bg-two shadow-xl"
+      initial="hidden"
+      animate={animationControls}
+      variants={variants}
+      custom={animationDirection}
+    >
       <Image
         src={imageUrl}
         alt={`project-image-${id}`}
@@ -45,7 +95,6 @@ function ProjectCard({
               {date}
             </p>
           </div>
-
           <Link
             rel="noopener noreferrer"
             target="_blank"
@@ -57,15 +106,22 @@ function ProjectCard({
         </div>
 
         <div className="flex flex-wrap gap-2">
-          {techonologies.map((technology) => (
-            <Tag label={technology} key={technology} />
+          {techonologies.map((technology, idx) => (
+            <motion.div variants={tagVariants} custom={idx} key={technology}>
+              <Tag label={technology} />
+            </motion.div>
           ))}
         </div>
 
-        <h4 className="font-ubuntu text-xl text-white">{name}</h4>
+        <motion.h4
+          className="font-ubuntu text-xl text-white"
+          variants={nameVariants}
+        >
+          {name}
+        </motion.h4>
       </div>
-    </div>
+    </motion.div>
   );
-}
+};
 
 export default ProjectCard;

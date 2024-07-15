@@ -31,12 +31,10 @@ const TimelineDetails = ({ data, index }: TimelineDetailsProps) => {
               {data[index].designation}
             </h1>
           </Reveal>
-          <h4 className="text-sm italic text-white">
+          <p className="text-sm italic text-white">
             {data[index].organization}
-          </h4>
-          <h6 className="mb-4 text-brand-one">
-            {data[index].serviceYearRange}
-          </h6>
+          </p>
+          <p className="mb-4 text-brand-one">{data[index].serviceYearRange}</p>
           <ul className="list-disc text-sm text-white">
             {data[index].achievements.map((achievement) => {
               return (

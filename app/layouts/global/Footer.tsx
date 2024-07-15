@@ -14,6 +14,7 @@ function SocialLink({ url, icon }: SocialLinkProps) {
       rel="noopener noreferrer"
       target="_blank"
       href={url}
+      aria-label="social link"
       className="rounded-full bg-brand-two p-2 text-grey shadow-lg transition-all duration-150 ease-in hover:bg-brand-one hover:text-white"
     >
       {icon}
@@ -48,6 +49,7 @@ function Footer() {
           <Link
             rel="noopener noreferrer"
             target="_blank"
+            aria-label="linkedin"
             href={"https://www.linkedin.com/in/minhazurrony/"}
             className="lowercase text-brand-one underline"
           >

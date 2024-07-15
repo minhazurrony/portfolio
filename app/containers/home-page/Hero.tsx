@@ -69,6 +69,7 @@ function Hero() {
                   <Link
                     rel="noopener noreferrer"
                     target="_blank"
+                    aria-label="flow cv download"
                     href="https://flowcv.com/resume/bdrsqij3s0"
                     className="text-md flex items-center rounded-full border-2 border-brand-two bg-brand-two px-4 py-1 font-ubuntu text-grey duration-300 ease-in hover:border-brand-one hover:bg-brand-one"
                   >
@@ -137,9 +138,9 @@ function Stats({ count, title }: StatsProps) {
 
   return (
     <div className="text-center">
-      <m.h3 ref={ref} className="font-ubuntu text-[48px] text-brand-one">
+      <m.p ref={ref} className="font-ubuntu text-[48px] text-brand-one">
         {rounded}
-      </m.h3>
+      </m.p>
       <Reveal>
         <p className="capitalize text-white">{title}</p>
       </Reveal>

@@ -99,6 +99,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             rel="noopener noreferrer"
             target="_blank"
             href={externalLink}
+            aria-label="project link"
             className="rounded-full bg-brand-two px-3 py-3 text-grey transition-all duration-300 ease-in hover:bg-brand-one"
           >
             <LuExternalLink className="text-xl" />
@@ -113,12 +114,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           ))}
         </div>
 
-        <motion.h4
+        <motion.p
           className="font-ubuntu text-xl text-white"
           variants={nameVariants}
         >
           {name}
-        </motion.h4>
+        </motion.p>
       </div>
     </motion.div>
   );

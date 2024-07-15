@@ -18,6 +18,7 @@ function SocialIcons() {
         <Link
           rel="noopener noreferrer"
           target="_blank"
+          aria-label="linkedin"
           href={"https://www.linkedin.com/in/minhazurrony/"}
           className="group flex items-center gap-2"
         >
@@ -36,6 +37,7 @@ function SocialIcons() {
         <Link
           rel="noopener noreferrer"
           target="_blank"
+          aria-label="github"
           href={"https://www.github.com/minhazurrony/"}
           className="group flex items-center gap-2"
         >

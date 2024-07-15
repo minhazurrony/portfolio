@@ -8,3 +8,5 @@ export { default as Reveal } from "./Reveal";
 export { default as LazyMotionContainer } from "./LazyMotionContainer";
 export { default as Logo } from "./Logo";
 export { default as HeroContent } from "./HeroContent";
+export { default as ProjectCarousel } from "./ProjectCarousel";
+export { default as Tag } from "./Tag";

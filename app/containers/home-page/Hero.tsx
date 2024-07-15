@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import { ContainerWrapper, Reveal, HeroContent } from "@/components";
+import { ContainerWrapper, Reveal, HeroContent, Tag } from "@/components";
 import Image from "next/image";
 import {
   IoMailOutline,
@@ -112,14 +112,6 @@ function UserInfo(props: UserInfoProps) {
       <props.icon className="self-end text-brand-one" />
       <p className="text-[14px] text-white">{props.label}</p>
     </div>
-  );
-}
-
-function Tag({ label }: { label: string }) {
-  return (
-    <p className="rounded-md border border-brand-one bg-bg-two px-2 text-[14px] leading-[2] text-brand-one">
-      {label}
-    </p>
   );
 }
 

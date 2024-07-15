@@ -35,7 +35,7 @@ function ProjectCarousel({ projects }: ProjectCarouselProps) {
 
   return (
     <div className="relative w-full px-0 py-6 md:px-12 lg:w-4/5 xl:w-1/2">
-      <div className="my-4 md:m-12">
+      <div className="my-4 md:mx-12 md:my-6">
         <ProjectCard
           name={projects[activeIndex].name}
           id={projects[activeIndex].id}

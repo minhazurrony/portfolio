@@ -1,10 +1,11 @@
 import React from "react";
 import {
-  ProjectCard,
   ContainerWrapper,
   ScrollBottom,
   Title,
+  ProjectCarousel,
 } from "@/components";
+import { PROJECTS } from "@/constants/projects";
 
 function Projects() {
   return (
@@ -18,17 +19,8 @@ function Projects() {
           subtitle="I had the please of working with these awesome projects"
         />
       </div>
-      <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 xl:grid-cols-3">
-        <ProjectCard
-          name="movie info hub"
-          imageUrl="/assets/images/about.jpg"
-          idx={0}
-        />
-        <ProjectCard
-          name="covid-19 stats"
-          imageUrl="/assets/images/about.jpg"
-          idx={1}
-        />
+      <div className="flex justify-center">
+        <ProjectCarousel projects={PROJECTS} />
       </div>
     </ContainerWrapper>
   );

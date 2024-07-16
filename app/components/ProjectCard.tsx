@@ -84,7 +84,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         width={450}
         className="rounded-t-xl brightness-50"
         style={{ height: "350px", width: "100%", objectFit: "cover" }}
-        priority={true}
       />
       <div className="space-y-4 p-4">
         <div className="flex items-center justify-between">

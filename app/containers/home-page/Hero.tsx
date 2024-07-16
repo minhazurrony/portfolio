@@ -32,6 +32,7 @@ function Hero() {
                     alt="profile-image"
                     width={96}
                     height={96}
+                    priority={true}
                     className="mb-4 h-[96px] rounded-full border-2 border-brand-two object-cover"
                   />
                 </Reveal>

@@ -42,14 +42,16 @@ function Skills() {
           style={{ x: xTranslation }}
           ref={sliderRef}
         >
-          {[...SKILLS, ...SKILLS].map((skill) => (
-            <Skill
-              key={skill.name}
-              label={skill.name}
-              icon={skill.icon}
-              iconColor={skill.iconColor}
-            />
-          ))}
+          {[...SKILLS, ...SKILLS].map((skill, idx) => {
+            return (
+              <Skill
+                key={idx}
+                label={skill.name}
+                icon={skill.icon}
+                iconColor={skill.iconColor}
+              />
+            );
+          })}
         </m.div>
       </div>
     </ContainerWrapper>

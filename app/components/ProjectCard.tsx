@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useEffect } from "react";
 import { LuExternalLink } from "react-icons/lu";
-import { motion, useAnimation } from "framer-motion";
+import { m, useAnimation } from "framer-motion";
 import Tag from "./Tag";
 import Link from "next/link";
 import { Project } from "@/constants/projects";
@@ -70,7 +70,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   }, [isActive, animationControls]);
 
   return (
-    <motion.div
+    <m.div
       className="rounded-xl bg-bg-two shadow-xl"
       initial="hidden"
       animate={animationControls}
@@ -108,20 +108,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
         <div className="flex flex-wrap gap-2">
           {techonologies.map((technology, idx) => (
-            <motion.div variants={tagVariants} custom={idx} key={technology}>
+            <m.div variants={tagVariants} custom={idx} key={technology}>
               <Tag label={technology} />
-            </motion.div>
+            </m.div>
           ))}
         </div>
 
-        <motion.p
-          className="font-ubuntu text-xl text-white"
-          variants={nameVariants}
-        >
+        <m.p className="font-ubuntu text-xl text-white" variants={nameVariants}>
           {name}
-        </motion.p>
+        </m.p>
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 

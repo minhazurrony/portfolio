@@ -3,6 +3,7 @@ import "./globals.css";
 import { Footer, Navbar } from "@/layouts/global";
 import { ubuntu, ibm_plex_mono } from "../public/assets/fonts";
 import { LazyMotionContainer } from "./components";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Minhazur Rahman",
@@ -21,6 +22,7 @@ export default function RootLayout({
         className={`${ubuntu.variable} ${ibm_plex_mono.variable} bg-bg-one font-ibm-plex-mono`}
       >
         <LazyMotionContainer>
+          <Analytics />
           <Navbar />
           {children}
           <Footer />

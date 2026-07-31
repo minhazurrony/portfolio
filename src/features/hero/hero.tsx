@@ -1,5 +1,4 @@
-"use client";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { ContainerWrapper, Reveal, Tag } from "@/components/common";
 import { PROFILE } from "@/content/profile";
 import Image from "next/image";
@@ -10,15 +9,9 @@ import {
 } from "react-icons/io5";
 import { IoIosLink } from "react-icons/io";
 import { GoDownload } from "react-icons/go";
-import {
-  animate,
-  m,
-  useInView,
-  useMotionValue,
-  useTransform,
-} from "framer-motion";
 import Link from "next/link";
 import HeroContent from "./components/hero-content";
+import Stats from "./components/stats";
 
 function Hero() {
   return (
@@ -108,38 +101,6 @@ function UserInfo(props: UserInfoProps) {
     <div className="flex items-center gap-4">
       <props.icon className="self-end text-brand-one" />
       <p className="text-[14px] text-white">{props.label}</p>
-    </div>
-  );
-}
-
-type StatsProps = {
-  count: number;
-  title: string;
-};
-
-function Stats({ count, title }: StatsProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const initialValue = useMotionValue(0);
-  const rounded = useTransform(initialValue, (latest) => Math.round(latest));
-
-  useEffect(() => {
-    if (isInView) {
-      animate(initialValue, count, {
-        duration: 1,
-        delay: 0.2,
-      });
-    }
-  }, [isInView, count, initialValue]);
-
-  return (
-    <div className="text-center">
-      <m.p ref={ref} className="font-ubuntu text-[48px] text-brand-one">
-        {rounded}
-      </m.p>
-      <Reveal>
-        <p className="capitalize text-white">{title}</p>
-      </Reveal>
     </div>
   );
 }

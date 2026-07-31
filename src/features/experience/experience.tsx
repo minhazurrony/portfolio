@@ -5,7 +5,7 @@ import Timeline from "./components/timeline";
 
 function Experience() {
   return (
-    <ContainerWrapper className="bg-bg-two p-[128px]">
+    <ContainerWrapper className="bg-bg-two p-8 md:p-16 lg:p-[128px]">
       <div className="mb-[128px] hidden lg:block">
         <ScrollBottom />
       </div>

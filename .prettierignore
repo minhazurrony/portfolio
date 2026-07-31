@@ -7,3 +7,7 @@ package-lock.json
 *.lock
 next-env.d.ts
 pnpm-lock.yaml
+
+# vendored third-party skills (keep upstream formatting) + skills lockfile
+.agents/
+skills-lock.json

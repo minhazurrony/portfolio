@@ -5,7 +5,7 @@ type ErrorMessageProps = {
 };
 
 function ErrorMessage({ message }: ErrorMessageProps) {
-  return <p className="text-red font-ubuntu text-sm">{message}</p>;
+  return <p className="font-ubuntu text-sm text-red">{message}</p>;
 }
 
 export default ErrorMessage;

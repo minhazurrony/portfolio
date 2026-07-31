@@ -27,10 +27,17 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
 .env*.local
 
 # vercel
 .vercel
+
+# ai agent local overrides (shared rule files ARE tracked)
+.claude/settings.local.json
+.cursor/*.local
+.aider*
+.windsurf/*.local
 
 # typescript
 *.tsbuildinfo

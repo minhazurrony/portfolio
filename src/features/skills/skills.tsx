@@ -24,10 +24,10 @@ function Skills() {
     return () => {
       controls.stop();
     };
-  }, []);
+  }, [xTranslation]);
 
   return (
-    <ContainerWrapper className="bg-bg-one p-[128px]">
+    <ContainerWrapper className="bg-bg-one p-8 md:p-16 lg:p-[128px]">
       <div className="mb-[128px] hidden lg:block">
         <ScrollBottom />
       </div>

@@ -1,9 +1,13 @@
 "use client";
-import { LazyMotion, domAnimation } from "framer-motion";
+import { LazyMotion, MotionConfig, domAnimation } from "framer-motion";
 import React, { PropsWithChildren } from "react";
 
 function LazyMotionContainer({ children }: PropsWithChildren) {
-  return <LazyMotion features={domAnimation}>{children}</LazyMotion>;
+  return (
+    <LazyMotion features={domAnimation}>
+      <MotionConfig reducedMotion="user">{children}</MotionConfig>
+    </LazyMotion>
+  );
 }
 
 export default LazyMotionContainer;

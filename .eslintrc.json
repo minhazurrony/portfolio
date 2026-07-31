@@ -1,3 +1,138 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals"],
+  "plugins": ["boundaries", "check-file"],
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    },
+    "boundaries/include": ["src/**/*"],
+    "boundaries/elements": [
+      { "type": "app", "pattern": "src/app/**" },
+      {
+        "type": "feature",
+        "pattern": "src/features/*",
+        "mode": "folder",
+        "capture": ["feature"]
+      },
+      { "type": "ui", "pattern": "src/components/ui/**" },
+      { "type": "common", "pattern": "src/components/common/**" },
+      { "type": "form", "pattern": "src/components/form/**" },
+      { "type": "layout", "pattern": "src/components/layout/**" },
+      { "type": "icons", "pattern": "src/components/icons/**" },
+      { "type": "content", "pattern": "src/content/**" },
+      { "type": "lib", "pattern": "src/lib/**" },
+      { "type": "hooks", "pattern": "src/hooks/**" },
+      { "type": "types", "pattern": "src/types/**" }
+    ]
+  },
+  "rules": {
+    "boundaries/no-unknown": "off",
+    "boundaries/no-unknown-files": "off",
+    "boundaries/element-types": [
+      "error",
+      {
+        "default": "disallow",
+        "message": "Layer '${file.type}' is not allowed to import layer '${dependency.type}'. See the import-boundary matrix in AGENTS.md.",
+        "rules": [
+          {
+            "from": ["app"],
+            "allow": [
+              "app",
+              "feature",
+              "layout",
+              "common",
+              "form",
+              "ui",
+              "icons",
+              "content",
+              "lib",
+              "hooks",
+              "types"
+            ]
+          },
+          {
+            "from": ["feature"],
+            "allow": [
+              "common",
+              "form",
+              "ui",
+              "icons",
+              "content",
+              "lib",
+              "hooks",
+              "types",
+              ["feature", { "feature": "${from.feature}" }]
+            ]
+          },
+          {
+            "from": ["layout"],
+            "allow": [
+              "common",
+              "ui",
+              "icons",
+              "content",
+              "lib",
+              "hooks",
+              "types"
+            ]
+          },
+          {
+            "from": ["common"],
+            "allow": ["common", "ui", "icons", "lib", "hooks", "types"]
+          },
+          {
+            "from": ["form"],
+            "allow": ["form", "ui", "icons", "lib", "types"]
+          },
+          {
+            "from": ["ui"],
+            "allow": ["ui", "icons", "lib", "types"]
+          },
+          {
+            "from": ["icons"],
+            "allow": ["icons"]
+          },
+          {
+            "from": ["content"],
+            "allow": ["types"]
+          },
+          {
+            "from": ["lib"],
+            "allow": ["lib", "types"]
+          },
+          {
+            "from": ["hooks"],
+            "allow": ["lib", "types"]
+          },
+          {
+            "from": ["types"],
+            "allow": ["types"]
+          }
+        ]
+      }
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "group": ["@/features/*/*", "@/features/*/*/**"],
+            "message": "Import a feature only via its public entry point: @/features/<name>."
+          }
+        ]
+      }
+    ],
+    "import/no-cycle": "error",
+    "check-file/filename-naming-convention": [
+      "error",
+      { "src/**/*.{ts,tsx}": "KEBAB_CASE" },
+      { "ignoreMiddleExtensions": true }
+    ],
+    "check-file/folder-naming-convention": [
+      "error",
+      { "src/**/": "KEBAB_CASE" }
+    ]
+  }
 }
